@@ -119,19 +119,11 @@ namespace TheGameCSharp
         public static List<Position> GetPossibleMoves(Position pos)
         {
             List<Position> PossibleMoves = new List<Position>();
-            //Every piece has max 4 moves, check them all randomly
-            List<Boolean> HelperList = new List<Boolean>();
-            for (int i = 0; i < 4; i++)
-                HelperList.Add(false);
-            Random rnd = new Random();
-            
-            while (HelperList.Contains(false))
+            for(int i = 0; i < 4; i++)
             {
-
-                int Move = rnd.Next(4);
                 Position MovePos;
                 Position RemovablePos;
-                switch (Move)
+                switch (i)
                 {
 
                     case 0:
@@ -140,20 +132,17 @@ namespace TheGameCSharp
                         MovePos.y = pos.y - 2;
                         RemovablePos.x = (pos.x + MovePos.x) / 2;
                         RemovablePos.y = (pos.y + MovePos.y) / 2;
-                        if (MovePos.x < 0 || MovePos.y < 0 || MovePos.x > 6 || MovePos.y > 6 || HelperList[Move] == true)
+                        if (MovePos.x < 0 || MovePos.y < 0 || MovePos.x > 6 || MovePos.y > 6)
                         {
-                            HelperList[0] = true;
                             break;
                         }
                         else if (GetPieceInPos(MovePos) == 2 && GetPieceInPos(RemovablePos) == 1)
                         {
-                            HelperList[0] = true;
                             PossibleMoves.Add(MovePos);
                             break;
                         }
                         else
                         {
-                            HelperList[Move] = true;
                             break;
                         }
 
@@ -162,20 +151,17 @@ namespace TheGameCSharp
                         MovePos.y = pos.y + 2;
                         RemovablePos.x = (pos.x + MovePos.x) / 2;
                         RemovablePos.y = (pos.y + MovePos.y) / 2;
-                        if (MovePos.x < 0 || MovePos.y < 0 || MovePos.x > 6 || MovePos.y > 6 || HelperList[Move] == true)
+                        if (MovePos.x < 0 || MovePos.y < 0 || MovePos.x > 6 || MovePos.y > 6)
                         {
-                            HelperList[1] = true;
                             break;
                         }
                         else if (GetPieceInPos(MovePos) == 2 && GetPieceInPos(RemovablePos) == 1)
                         {
-                            HelperList[1] = true;
                             PossibleMoves.Add(MovePos);
                             break;
                         }
                         else
                         {
-                            HelperList[Move] = true;
                             break;
                         }
                     case 2:
@@ -183,20 +169,17 @@ namespace TheGameCSharp
                         MovePos.y = pos.y;
                         RemovablePos.x = (pos.x + MovePos.x) / 2;
                         RemovablePos.y = (pos.y + MovePos.y) / 2;
-                        if (MovePos.x < 0 || MovePos.y < 0 || MovePos.x > 6 || MovePos.y > 6 || HelperList[Move] == true)
+                        if (MovePos.x < 0 || MovePos.y < 0 || MovePos.x > 6 || MovePos.y > 6)
                         {
-                            HelperList[2] = true;
                             break;
                         }
                         else if (GetPieceInPos(MovePos) == 2 && GetPieceInPos(RemovablePos) == 1)
                         {
-                            HelperList[2] = true;
                             PossibleMoves.Add(MovePos);
                             break;
                         }
                         else
                         {
-                            HelperList[Move] = true;
                             break;
                         }
                     case 3:
@@ -204,25 +187,21 @@ namespace TheGameCSharp
                         MovePos.y = pos.y;
                         RemovablePos.x = (pos.x + MovePos.x) / 2;
                         RemovablePos.y = (pos.y + MovePos.y) / 2;
-                        if (MovePos.x < 0 || MovePos.y < 0 || MovePos.x > 6 || MovePos.y > 6 || HelperList[Move] == true)
+                        if (MovePos.x < 0 || MovePos.y < 0 || MovePos.x > 6 || MovePos.y > 6)
                         {
-                            HelperList[3] = true;
                             break;
                         }
                         else if (GetPieceInPos(MovePos) == 2 && GetPieceInPos(RemovablePos) == 1)
                         {
-                            HelperList[3] = true;
                             PossibleMoves.Add(MovePos);
                             break;
                         }
                         else
                         {
-                            HelperList[Move] = true;
                             break;
                         }
                 }
-
-            }
+        }
             return PossibleMoves;
         }
 
