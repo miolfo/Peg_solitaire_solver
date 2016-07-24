@@ -20,31 +20,14 @@ namespace TheGameCSharp
         public static void CreateBoard()
         {
             GameBoard = new int[7][];
-            for (int i = 0; i < 7; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        GameBoard[0] = new int[7] { 0, 0, 1, 1, 1, 0, 0 };
-                        break;
-                    case 1:
-                        GameBoard[1] = new int[7] { 0, 0, 1, 1, 1, 0, 0 };
-                        break;
-                    case 2:
-                        GameBoard[2] = new int[7] { 1, 1, 1, 1, 1, 1, 1 };
-                        break;
-                    case 3:
-                        GameBoard[3] = new int[7] { 1, 1, 1, 2, 1, 1, 1 };
-                        break;
-                    case 4:
-                        GameBoard[4] = new int[7] { 1, 1, 1, 1, 1, 1, 1 };
-                        break;
-                    case 5:
-                        GameBoard[5] = new int[7] { 0, 0, 1, 1, 1, 0, 0 };
-                        break;
-                    case 6:
-                        GameBoard[6] = new int[7] { 0, 0, 1, 1, 1, 0, 0 };
-                        break;
+           
+            GameBoard[0] = new int[7] { 0, 0, 1, 1, 1, 0, 0 };
+            GameBoard[1] = new int[7] { 0, 0, 1, 1, 1, 0, 0 };
+            GameBoard[2] = new int[7] { 1, 1, 1, 1, 1, 1, 1 };
+            GameBoard[3] = new int[7] { 1, 1, 1, 2, 1, 1, 1 };
+            GameBoard[4] = new int[7] { 1, 1, 1, 1, 1, 1, 1 };
+            GameBoard[5] = new int[7] { 0, 0, 1, 1, 1, 0, 0 };
+            GameBoard[6] = new int[7] { 0, 0, 1, 1, 1, 0, 0 };
 
                 }
             }
